@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+  </head>
+  <body>
+    <h1>Password Generator</h1>
+    <form action="{% url 'password' %}">
+      <label for="pass-length">Specify length of password</label>
+      <br />
+      <br />
+      <select name="pass-length">
+        <option value="6">6 chars</option>
+        <option value="7">7 chars</option>
+        <option value="8" selected="true">8 chars</option>
+        <option value="9">9 chars</option>
+        <option value="10">10 chars</option>
+      </select>
+      <br />
+      <br />
+      <label for="uppercase">Includes uppercase: </label>
+      <input type="checkbox" name="uppercase" />
+      <br />
+      <br />
+      <label for="numbers">Includes numbers: </label>
+      <input type="checkbox" name="numbers" />
+      <br />
+      <br />
+      <label for="special">Includes special characters: </label>
+      <input type="checkbox" name="special" />
+      <br />
+      <br />
+      <button type="submit">Generate password</button>
+    </form>
+    <br />
+    <br />
+    <a href="{% url 'about' %}">About</a>
+  </body>
+</html>
